@@ -12,6 +12,7 @@
         "unordered_set": "cpp",
         "random": "cpp",
         "xstring": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "map": "cpp"
     }
 }

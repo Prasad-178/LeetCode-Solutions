@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<map>
+#include<math.h>
 using namespace std;
 
 struct TreeNode {
@@ -15,11 +16,17 @@ struct TreeNode {
 
 class Solution {
 public:
-    bool isSameTree(TreeNode* p, TreeNode* q) {
-        while (p && q)
-        {
-            
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        if (root == NULL) return 0;
+        int sum = 0;
+        if (root->val >= low && root->val <= high) {
+            sum += root->val;
         }
+        sum += rangeSumBST(root->left, low, high);
+        sum += rangeSumBST(root->right, low, high);
+        
+        
+        return sum ;
     }
 };
 
