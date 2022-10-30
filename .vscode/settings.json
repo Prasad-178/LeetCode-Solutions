@@ -1,18 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "array": "cpp",
-        "deque": "cpp",
-        "list": "cpp",
+        "*.ejs": "html",
         "vector": "cpp",
-        "ostream": "cpp",
-        "*.tcc": "cpp",
-        "string": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "random": "cpp",
-        "xstring": "cpp",
-        "cmath": "cpp",
-        "map": "cpp"
+        "iostream": "cpp"
     }
 }
