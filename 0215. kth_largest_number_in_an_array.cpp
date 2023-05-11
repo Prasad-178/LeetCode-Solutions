@@ -7,26 +7,14 @@ using namespace std;
 
 class Solution {
 public:
-    vector <int> countingSort(vector <int> v, int n) {
-        map <int,int> f;
-        for (auto i = v.begin(); i != v.end(); i++) {
-            f[*i]++;
-        }
-        int i = 0;
-        for (auto it : f) {
-            int val = it.first;
-            int ct = it.second;
-            for (int j=0; j<ct; j++) {
-                v[i++] = val;
-            }
-        }
-        return v;
-    }
-
     int findKthLargest(vector<int>& nums, int k) {
-        int n = nums.size();
-        nums = countingSort(nums, n);
-        return nums[n-k];
+        vector<int> hash((2*1e4) + 5, 0);
+        for (int i=0; i<nums.size(); i++) hash[nums[i]+1e4]++;
+        for (int i=hash.size()-1; i>=0; i--) {
+            if (hash[i] >= 1) k-=hash[i];
+            if (k<=0) return i-1e4;
+        }
+        return -1;
     }
 };
 
