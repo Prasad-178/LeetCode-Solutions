@@ -16,13 +16,16 @@ struct ListNode {
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        int count = 0;
-        while(head != NULL) {
-            head = head->next;
-            count++;
-
-            if (count > 10001) return true;
+        ListNode *hare = head;
+        ListNode *tortoise = head;
+        
+        while (hare!=NULL && hare->next!=NULL) {
+            hare = hare->next->next;
+            tortoise = tortoise->next;
+            
+            if (hare==tortoise) return true;
         }
+        
         return false;
     }
 };
